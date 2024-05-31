@@ -185,6 +185,8 @@ async function _handleRequest(
     throw new AuthRetryableFetchError(_getErrorMessage(e), 0)
   }
 
+  console.log(`_handleRequest result: ${JSON.stringify(result)}`);
+
   if (!result.ok) {
     await handleError(result)
   }
